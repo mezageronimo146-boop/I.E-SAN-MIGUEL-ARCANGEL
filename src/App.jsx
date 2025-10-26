@@ -5,6 +5,8 @@ const JulumitoSchool = () => {
   const [selectedCenter, setSelectedCenter] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedSubline, setSelectedSubline] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const centers = [
     {
@@ -12,7 +14,23 @@ const JulumitoSchool = () => {
       title: "Gastronomía",
       icon: <Utensils className="w-8 h-8" />,
       color: "from-yellow-400 to-orange-500",
-      sublines: ["Transformación de alimentos", "Cocina ancestral"],
+      sublines: [
+        {
+          name: "Transformación de alimentos",
+          images: [
+            "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800",
+            "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+            "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+          ]
+        },
+        {
+          name: "Cocina ancestral",
+          images: [
+            "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800",
+            "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=800"
+          ]
+        }
+      ],
       details: ["Café", "Platos Típicos de la región"],
       areas: ["Matemáticas", "Química", "Ciencias Naturales", "Ciencias Sociales", "Ética"],
       responsables: ["Miguel Ortega", "William Ruiz", "Lizeth Rodríguez", "Diego Tafur", "Doris Sauca"]
@@ -22,7 +40,23 @@ const JulumitoSchool = () => {
       title: "Música y Canto",
       icon: <Music className="w-8 h-8" />,
       color: "from-blue-400 to-indigo-600",
-      sublines: ["Chirimía", "Banda Marcial"],
+      sublines: [
+        {
+          name: "Chirimía",
+          images: [
+            "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800",
+            "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
+          ]
+        },
+        {
+          name: "Banda Marcial",
+          images: [
+            "https://images.unsplash.com/photo-1571609942892-7d4c6b8e8b7e?w=800",
+            "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800",
+            "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=800"
+          ]
+        }
+      ],
       areas: ["Ciencias Sociales"],
       catedras: ["Competencias Ciudadanas", "Cátedra Popayán", "Cátedra Paz"],
       responsables: ["Huber Pino", "Pablo Wolfran Zuñiga"]
@@ -32,7 +66,36 @@ const JulumitoSchool = () => {
       title: "Arte",
       icon: <Palette className="w-8 h-8" />,
       color: "from-pink-400 to-purple-600",
-      sublines: ["Pintura", "Tejido", "Bordado", "Bisutería"],
+      sublines: [
+        {
+          name: "Pintura",
+          images: [
+            "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800",
+            "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800"
+          ]
+        },
+        {
+          name: "Tejido",
+          images: [
+            "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800",
+            "https://images.unsplash.com/photo-1591089430516-ea5b0d4e9c65?w=800"
+          ]
+        },
+        {
+          name: "Bordado",
+          images: [
+            "https://images.unsplash.com/photo-1612442443556-09b5b309e637?w=800",
+            "https://images.unsplash.com/photo-1612442443832-05dcbacf9878?w=800"
+          ]
+        },
+        {
+          name: "Bisutería",
+          images: [
+            "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800",
+            "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800"
+          ]
+        }
+      ],
       areas: ["Ciencias Sociales", "Artística"],
       catedras: ["Competencias Ciudadanas", "Cátedra Popayán"],
       responsables: ["Rosanna Pérez", "Gloria de Fátima Vega", "Deyanira Palechor", "Lauro Absalon Tobar"]
@@ -42,7 +105,71 @@ const JulumitoSchool = () => {
       title: "Deportes y Cultura",
       icon: <Trophy className="w-8 h-8" />,
       color: "from-green-400 to-teal-600",
-      sublines: ["Literatura", "Teatro", "Danza", "Ajedrez", "Aeróbicos", "Microfútbol y Voleibol", "Bilingüismo", "Procesos Escritores", "Oralidad"],
+      sublines: [
+        {
+          name: "Literatura",
+          images: [
+            "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800",
+            "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800"
+          ]
+        },
+        {
+          name: "Teatro",
+          images: [
+            "https://images.unsplash.com/photo-1503095396549-807759245b35?w=800",
+            "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800"
+          ]
+        },
+        {
+          name: "Danza",
+          images: [
+            "https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=800",
+            "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=800"
+          ]
+        },
+        {
+          name: "Ajedrez",
+          images: [
+            "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800",
+            "https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=800"
+          ]
+        },
+        {
+          name: "Aeróbicos",
+          images: [
+            "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800",
+            "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800"
+          ]
+        },
+        {
+          name: "Microfútbol y Voleibol",
+          images: [
+            "https://images.unsplash.com/photo-1589487391730-58f20eb2c308?w=800",
+            "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800"
+          ]
+        },
+        {
+          name: "Bilingüismo",
+          images: [
+            "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800",
+            "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800"
+          ]
+        },
+        {
+          name: "Procesos Escritores",
+          images: [
+            "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800",
+            "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800"
+          ]
+        },
+        {
+          name: "Oralidad",
+          images: [
+            "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800",
+            "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?w=800"
+          ]
+        }
+      ],
       areas: ["Lengua Castellana", "Educación Física", "Inglés"],
       catedras: ["Uso del tiempo libre", "Cátedra Popayán", "Educación Sexual", "Afrocolombianidad"],
       responsables: ["Oscar Piamba", "Lina Becerra", "Juliana Calvache", "Wilson Vásquez", "Patricia Valencia", "Johana Espinosa", "Andrea Dorado", "Camilo Bazán"]
@@ -52,7 +179,16 @@ const JulumitoSchool = () => {
       title: "Tecnología, Programación y Robótica",
       icon: <Cpu className="w-8 h-8" />,
       color: "from-cyan-400 to-blue-600",
-      sublines: ["Proyectos STEM+"],
+      sublines: [
+        {
+          name: "Proyectos STEM+",
+          images: [
+            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800",
+            "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800",
+            "https://images.unsplash.com/photo-1563968743333-044cef800494?w=800"
+          ]
+        }
+      ],
       areas: ["Matemáticas", "Tecnología"],
       catedras: ["Uso del tiempo libre"],
       responsables: ["Jahnn Cardey Gómez G", "Hamer Moreno"]
@@ -63,10 +199,27 @@ const JulumitoSchool = () => {
     const search = searchTerm.toLowerCase();
     const titleMatch = center.title.toLowerCase().includes(search);
     const sublineMatch = center.sublines.some(subline => 
-      subline.toLowerCase().includes(search)
+      subline.name.toLowerCase().includes(search)
     );
     return titleMatch || sublineMatch;
   });
+
+  const handleSublineClick = (subline) => {
+    setSelectedSubline(subline);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    if (selectedSubline && currentImageIndex < selectedSubline.images.length - 1) {
+      setCurrentImageIndex(currentImageIndex + 1);
+    }
+  };
+
+  const prevImage = () => {
+    if (currentImageIndex > 0) {
+      setCurrentImageIndex(currentImageIndex - 1);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
@@ -191,7 +344,7 @@ const JulumitoSchool = () => {
                     {center.sublines.slice(0, 3).map((subline, idx) => (
                       <li key={idx} className="text-sm text-gray-700 flex items-start">
                         <span className="text-blue-600 mr-2">•</span>
-                        {subline}
+                        {subline.name}
                       </li>
                     ))}
                     {center.sublines.length > 3 && (
@@ -246,9 +399,13 @@ const JulumitoSchool = () => {
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedCenter.sublines.map((subline, idx) => (
-                    <span key={idx} className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
-                      {subline}
-                    </span>
+                    <button
+                      key={idx}
+                      onClick={() => handleSublineClick(subline)}
+                      className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 hover:shadow-md transition-all cursor-pointer"
+                    >
+                      {subline.name} ({subline.images.length} fotos)
+                    </button>
                   ))}
                 </div>
               </div>
@@ -315,6 +472,88 @@ const JulumitoSchool = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Image Gallery Modal */}
+      {selectedSubline && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 z-[60] flex items-center justify-center p-4 animate-fade-in">
+          <div className="bg-white rounded-2xl max-w-4xl w-full shadow-2xl overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-6 text-white flex items-center justify-between">
+              <div>
+                <h3 className="text-2xl font-bold">{selectedSubline.name}</h3>
+                <p className="text-blue-200 text-sm mt-1">
+                  Foto {currentImageIndex + 1} de {selectedSubline.images.length}
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  setSelectedSubline(null);
+                  setCurrentImageIndex(0);
+                }}
+                className="text-white hover:bg-white hover:bg-opacity-20 rounded-full p-2 transition-all"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            
+            <div className="relative bg-gray-900">
+              <img
+                src={selectedSubline.images[currentImageIndex]}
+                alt={`${selectedSubline.name} - Foto ${currentImageIndex + 1}`}
+                className="w-full h-96 object-cover"
+              />
+              
+              {/* Navigation Buttons */}
+              <div className="absolute inset-0 flex items-center justify-between p-4">
+                <button
+                  onClick={prevImage}
+                  disabled={currentImageIndex === 0}
+                  className={`bg-black bg-opacity-50 text-white p-3 rounded-full transition-all ${
+                    currentImageIndex === 0
+                      ? 'opacity-30 cursor-not-allowed'
+                      : 'hover:bg-opacity-70 hover:scale-110'
+                  }`}
+                >
+                  <ChevronRight className="w-6 h-6 transform rotate-180" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  disabled={currentImageIndex === selectedSubline.images.length - 1}
+                  className={`bg-black bg-opacity-50 text-white p-3 rounded-full transition-all ${
+                    currentImageIndex === selectedSubline.images.length - 1
+                      ? 'opacity-30 cursor-not-allowed'
+                      : 'hover:bg-opacity-70 hover:scale-110'
+                  }`}
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+
+            {/* Thumbnail Navigation */}
+            <div className="p-4 bg-gray-100">
+              <div className="flex gap-2 overflow-x-auto pb-2">
+                {selectedSubline.images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImageIndex(idx)}
+                    className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                      idx === currentImageIndex
+                        ? 'border-blue-600 scale-105'
+                        : 'border-gray-300 hover:border-blue-400'
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`Miniatura ${idx + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
               </div>
             </div>
           </div>
