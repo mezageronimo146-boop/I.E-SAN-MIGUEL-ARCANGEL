@@ -285,7 +285,7 @@ const JulumitoSchool = () => {
             Descubre y desarrolla tu pasión con nuestros programas especializados
           </p>
           <div className="inline-block bg-white text-blue-800 px-6 py-3 rounded-full font-semibold shadow-lg">
-            Inicio: Jueves 4 de septiembre, 10:15 AM - 12:00 M
+            Inicio: Lunes 27 de octubre, 8:00 AM - 12:00 PM
           </div>
         </div>
       </section>
