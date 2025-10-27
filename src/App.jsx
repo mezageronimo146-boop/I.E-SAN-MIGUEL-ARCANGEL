@@ -1,6 +1,39 @@
 import React, { useState } from 'react';
 import { BookOpen, Utensils, Music, Palette, Trophy, Cpu, ChevronRight, Menu, X, Search } from 'lucide-react';
 
+import tejido1 from './assets/arte/tejido/teji1.jpeg';
+import tejido2 from './assets/arte/tejido/teji2.jpeg';
+import tejido3 from './assets/arte/tejido/teji3.jpeg';
+
+import aje1 from './assets/cultura-y-deporte/ajedrez/aje1.jpeg';
+import aje2 from './assets/cultura-y-deporte/ajedrez/aje2.jpeg';
+
+import danza1 from './assets/cultura-y-deporte/danza/danza.jpeg';
+
+import ancestral from './assets/gastronomia/ancestral/ances1.jpeg';
+import ancestra2 from './assets/gastronomia/ancestral/ances2.jpeg';
+import ancestra3 from './assets/gastronomia/ancestral/ances3.jpeg';
+import ancestra4 from './assets/gastronomia/ancestral/ances4.jpeg';
+import ancestra5 from './assets/gastronomia/ancestral/ances5.jpeg';
+
+import tranformar1 from './assets/gastronomia/transformar/trans1.jpeg';
+import tranformar2 from './assets/gastronomia/transformar/trans2.jpeg';
+
+import chirimia from './assets/musica-y-canto/chirimia/chirimia.jpeg';
+
+import marcial from './assets/musica-y-canto/marcial/banda1.jpeg';
+import marcia2 from './assets/musica-y-canto/marcial/banda2.jpeg';
+
+import programacion1 from './assets/programacion/programacion/programacion1.jpeg';
+import programacion2 from './assets/programacion/programacion/programacion2.jpeg';
+import programacion3 from './assets/programacion/programacion/programacion3.jpeg';
+import programacion4 from './assets/programacion/programacion/programacion4.jpeg';
+import programacion5 from './assets/programacion/programacion/programacion5.jpeg';
+import programacion6 from './assets/programacion/programacion/programacion6.jpeg';
+import programacion7 from './assets/programacion/programacion/programacion7.jpeg';
+import programacion8 from './assets/programacion/programacion/programacion8.jpeg';
+import programacion9 from './assets/programacion/programacion/programacion9.jpeg';
+
 const JulumitoSchool = () => {
   const [selectedCenter, setSelectedCenter] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,16 +51,18 @@ const JulumitoSchool = () => {
         {
           name: "Transformación de alimentos",
           images: [
-            "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800",
-            "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
-            "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+            tranformar1,
+            tranformar2            
           ]
         },
         {
           name: "Cocina ancestral",
           images: [
-            "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800",
-            "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=800"
+            ancestral,
+            ancestra2,
+            ancestra3,
+            ancestra4,
+            ancestra5            
           ]
         }
       ],
@@ -44,16 +79,14 @@ const JulumitoSchool = () => {
         {
           name: "Chirimía",
           images: [
-            "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800",
-            "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800"
+            chirimia            
           ]
         },
         {
           name: "Banda Marcial",
           images: [
-            "https://images.unsplash.com/photo-1571609942892-7d4c6b8e8b7e?w=800",
-            "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800",
-            "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=800"
+          marcial,
+          marcia2            
           ]
         }
       ],
@@ -77,8 +110,9 @@ const JulumitoSchool = () => {
         {
           name: "Tejido",
           images: [
-            "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800",
-            "https://images.unsplash.com/photo-1591089430516-ea5b0d4e9c65?w=800"
+            tejido1,
+            tejido2,
+            tejido3            
           ]
         },
         {
@@ -123,15 +157,14 @@ const JulumitoSchool = () => {
         {
           name: "Danza",
           images: [
-            "https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=800",
-            "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=800"
+            danza1            
           ]
         },
         {
           name: "Ajedrez",
           images: [
-            "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800",
-            "https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=800"
+            aje1,
+            aje2            
           ]
         },
         {
@@ -183,9 +216,15 @@ const JulumitoSchool = () => {
         {
           name: "Proyectos STEM+",
           images: [
-            "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800",
-            "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800",
-            "https://images.unsplash.com/photo-1563968743333-044cef800494?w=800"
+            programacion1,
+            programacion2,
+            programacion3,
+            programacion4,
+            programacion5,
+            programacion6,
+            programacion7,
+            programacion8,
+            programacion9
           ]
         }
       ],
